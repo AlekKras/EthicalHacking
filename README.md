@@ -13,7 +13,8 @@ The following Guid includes commands in the following:
 
 ***
 Author has submitted the code for educational purposes only. Author doesn't hold any responsibility for wrong usage of this intellectual property! 
-<p style="color:red"> NEVER PERFORM ETHICAL HACKING WITHOUT THE WRITTEN PERMISSION FROM THE PRODUCT OWNER, YOU HAVE BEEN WARNED! </p>
+<span style="color:red"> NEVER PERFORM ETHICAL HACKING WITHOUT THE WRITTEN PERMISSION FROM THE PRODUCT OWNER, YOU HAVE BEEN WARNED! </span>
+
 ***
 
 ## Nmap

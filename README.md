@@ -13,7 +13,7 @@ The following Guid includes commands in the following:
 
 ***
 Author has submitted the code for educational purposes only. Author doesn't hold any responsibility for wrong usage of this intellectual property! 
-* NEVER PERFORM ETHICAL HACKING WITHOUT THE WRITTEN PERMISSION FROM THE PRODUCT OWNER, YOU HAVE BEEN WARNED! *
+<p style="color:red"> NEVER PERFORM ETHICAL HACKING WITHOUT THE WRITTEN PERMISSION FROM THE PRODUCT OWNER, YOU HAVE BEEN WARNED! </p>
 ***
 
 ## Nmap
@@ -22,7 +22,7 @@ Nmap is a security scanner, originally written by Gordon Lyon, used to discover 
 
 
 | Test Case | Command |
-| : --- : | : --- : |
+| :---: | :---: |
 | Scan the target for vulnerabilities | `nmap -Pn --script vuln <target.com>` | 
 | Actively exploit detected vulnerabilities | `nmap --script exploit -Pn <target.com` |
 | Brute Force Passwords | `nmap --script brute -Pn <target.com>` |

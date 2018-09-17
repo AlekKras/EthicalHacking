@@ -26,7 +26,7 @@ If you are using Linux (works for Debian/Centos), run:
 There is no doubting the sheer size of options here. Let's break it down with what scan techniques are the most useful for us right away.
 
 | Flag | Description |
-|---|:---:|---:|
+| :---: | :--- |
 | `-sU` | UDP scan. Tends to be slower than TCP scans, but some services are only listening for UDP requests |
 | `-sS` | SYN scan. SYN/ACK indicates the port is listening (open), while a RST (reset) means it's not listening on that port |
 | `-O` | Crafts raw packets attempting to determine the operating system |

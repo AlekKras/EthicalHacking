@@ -12,6 +12,7 @@ idea how to handle an FTP connection request sent to it.
 Nmap (Network Mapper) scans over those ports telling you everything from what software is running to what version it is.
 There is even an option to determine the operating system.
 
+
 ## Getting Started
 
 If you are using Linux (works for Debian/Centos), run:
@@ -21,10 +22,11 @@ If you are using Linux (works for Debian/Centos), run:
 
 ## Things to remember
 
+
 There is no doubting the sheer size of options here. Let's break it down with what scan techniques are the most useful for us right away.
 
 | Flag | Description |
-| --- | --- | --- |
+| :---: | :--- |
 | `-sU` | UDP scan. Tends to be slower than TCP scans, but some services are only listening for UDP requests |
 | `-sS` | SYN scan. SYN/ACK indicates the port is listening (open), while a RST (reset) means it's not listening on that port |
 | `-O` | Crafts raw packets attempting to determine the operating system |

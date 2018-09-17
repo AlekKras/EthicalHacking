@@ -1,5 +1,6 @@
 # Nmap
 
+
 If you want to exploit vulnerabilities and root boxes, you'll need to learn how to perform the necessary reconnaissance first.
 In fact, you will spend far more time researching your target then you will exploiting it.
 
@@ -86,6 +87,7 @@ Add `oN` switch so you will be able to output everything to the file
 
 ## Heartbleed
 
+
 Put <a href="https://svn.nmap.org/nmap/scripts/ssl-heartbleed.nse">this</a> to the directory **`usr/share/nmap/scripts`**
 
 Put <a href="https://svn.nmap.org/nmap/nselib/tls.lua">this</a> to the directory **`usr/share/nmap/nselib`**
@@ -93,3 +95,23 @@ Put <a href="https://svn.nmap.org/nmap/nselib/tls.lua">this</a> to the directory
 Now you can run this against webservers:
 
 `sudo nmap -sV --script=ssl-heartbleed $TARGET`
+
+
+## Interesting!!!
+
+The reasons why I marked it interesting is that I will be working this fall to make it a simple open source tool for automatic testing
+
+| Idea | Tag | 
+| --- | --- |
+| CSRF vulns | `http-csrf`
+| DOM XSS | `http-dombased-xss`
+| Dev Framework | `http-devframework`
+| Finding out hosts | `http-vhosts`
+| Finding security headers | `http-headers` && `http-security-headers`
+| Finding malware hosts | `http-malware-host`
+| Server Vulns (OS) | `http-server-header`
+| Explore Webserver | `http-sitemap-generator`
+| Slowloris check | `http-slowloris-check`
+| XSS Vulns | `http-stored-xss` && `http-xssed`
+| Trace exploit | `http-traceroute`
+| Detect firewalls | `http-waf-detect`

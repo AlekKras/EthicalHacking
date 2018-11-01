@@ -1,9 +1,11 @@
 FROM ubuntu
 LABEL Aleksandr Krasnov "alekforwork@gmail.com"
+USER root
 RUN apt-get -y update && \
     apt-get -y upgrade && \
-    apt-get install golang-go -y
-#for other versions
-#add-apt-repository ppa:gophers/archive
-#apt-get install golang-1.10-go
+    apt-get install git -y && \
+    apt-get install golang-go -y && \
+    apt-get install  libpcap-dev -y && \
+    apt-get install libnetfilter-queue-dev -y
 
+COPY RUN_IT.sh RUN_IT.sh

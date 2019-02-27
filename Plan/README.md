@@ -42,3 +42,9 @@ Important to note:
 - `-sS` - SYN packets;
 - `-T1` - slow speed;
 - `-P0` - suppress ping;
+
+
+Using Docker we can build:
+```
+docker build -t anonymousnmap . && docker run -it anonymousnmap:latest
+```
